@@ -1,0 +1,8 @@
+github_users:
+  - xingboli
+
+repo_description_lines_max: 2
+
+github_repos:
+  # list repositories you want to feature on the repositories page, e.g.:
+  # - xingboli/repo-name
