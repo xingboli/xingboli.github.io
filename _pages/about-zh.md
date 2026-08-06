@@ -3,6 +3,8 @@ layout: about
 title: 关于
 permalink: /about-zh/
 subtitle: 武汉纺织大学 2026 级硕士研究生
+nav: true
+nav_order: 3
 
 profile:
   align: right
