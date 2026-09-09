@@ -22,10 +22,6 @@ latest_posts:
   enabled: false
 ---
 
-<p class="language-switcher" aria-label="Language switcher">
-  <strong>English</strong><span aria-hidden="true"> · </span><a href="{{ '/about-zh/' | relative_url }}">中文</a>
-</p>
-
 I am a master's student (Class of 2026) at [Wuhan Textile University](https://www.wtu.edu.cn/). My research interests lie at the intersection of ubiquitous computing, wireless sensing, and smart health — for example, using mmWave radars and smartphone IMU sensors for non-invasive health monitoring, such as tremor assessment and remote monitoring for Parkinson's disease.
 
 Right now I am exploring how to build practical, low-burden sensing systems that work in real daily-life settings, and I look forward to turning these interests into concrete research outcomes.

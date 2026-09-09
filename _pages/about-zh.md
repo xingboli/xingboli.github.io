@@ -25,10 +25,6 @@ latest_posts:
   enabled: false
 ---
 
-<p class="language-switcher" aria-label="语言切换">
-  <a href="{{ '/' | relative_url }}">English</a><span aria-hidden="true"> · </span><strong>中文</strong>
-</p>
-
 我是武汉纺织大学 2026 级硕士研究生。我的研究兴趣集中在普适计算、无线感知与智慧健康方向，例如利用毫米波雷达和手机 IMU 传感器进行无感式健康监测，如震颤评估与帕金森病远程监测。
 
 目前我在探索如何在真实生活场景中构建低负担、可落地的感知系统，希望逐步把这些兴趣转化为具体的研究成果。

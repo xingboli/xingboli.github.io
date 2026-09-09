@@ -42,24 +42,26 @@
       </button>
       <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
         <ul class="navbar-nav navbar-menu-list flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %}
-              {% assign about_title = page.nav_title | default: page.title %}
-            {% endif %}
-          {% endfor %}
-          <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
-              {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
+          {% assign language_label = '中文' %}
+          {% assign language_url = '/about-zh/' %}
+          {% if page.permalink == '/about-zh/' %}
+            {% assign language_label = 'English' %}
+            {% assign language_url = '/' %}
+          {% endif %}
+          <li class="nav-item language-switcher-nav">
+            <a
+              class="nav-link"
+              href="{{ language_url | relative_url }}"
+              title="Switch language"
+              aria-label="Switch language: {{ language_label }}"
+            >
+              {{- language_label -}}
             </a>
           </li>
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
+            {% if p.nav and p.autogen == null and p.permalink != '/about-zh/' and p.permalink != '/' %}
               {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
