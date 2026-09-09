@@ -1,8 +1,9 @@
 ---
-layout: about
-title: 关于
+layout: about-zh
+title: 关于 / 中文
 permalink: /about-zh/
 subtitle: 武汉纺织大学 2026 级硕士研究生
+navbar_title: 李兴博
 nav: true
 nav_order: 3
 
@@ -23,6 +24,10 @@ announcements:
 latest_posts:
   enabled: false
 ---
+
+<p class="language-switcher" aria-label="语言切换">
+  <a href="{{ '/' | relative_url }}">English</a><span aria-hidden="true"> · </span><strong>中文</strong>
+</p>
 
 我是武汉纺织大学 2026 级硕士研究生。我的研究兴趣集中在普适计算、无线感知与智慧健康方向，例如利用毫米波雷达和手机 IMU 传感器进行无感式健康监测，如震颤评估与帕金森病远程监测。
 
