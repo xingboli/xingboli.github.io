@@ -8,7 +8,7 @@ nav_order: 3
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: xingbo-li.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>武汉纺织大学</p>

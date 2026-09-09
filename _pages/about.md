@@ -6,7 +6,7 @@ subtitle: M.S. Student at <a href="https://www.wtu.edu.cn/">Wuhan Textile Univer
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: xingbo-li.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Wuhan Textile University</p>
