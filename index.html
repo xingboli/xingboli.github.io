@@ -1,89 +1,727 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Xingbo Li </title> <meta name="author" content="Xingbo Li"> <meta name="description" content="Personal homepage of Xingbo Li, a master's student at Wuhan Textile University. Research interests: ubiquitous computing, wireless sensing, and smart health. "> <meta name="keywords" content="ubiquitous-computing, wireless-sensing, smart-health, academic-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
-  :root {
-    --max-content-width: 930px;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xingbo Li · 工具与研究</title>
+<meta name="description" content="Xingbo Li（李星波），武汉纺织大学硕士生。研究泛在计算、无线感知与智慧健康；这里收集了我做的一些小工具与开源项目。">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b57d0'/%3E%3Ctext x='16' y='22' font-family='Roboto,sans-serif' font-size='15' font-weight='500' fill='%23fff' text-anchor='middle'%3EXL%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1f1f1f; --ink-2:#444746; --ink-3:#747775; --ink-4:#9aa0a6;
+    --line:#e6e6e6; --line-2:#dadce0;
+    --blue:#0b57d0; --blue-hover:#0842a0; --blue-soft:#e8f0fe; --blue-soft-2:#d3e3fd;
+    --green:#146c2e; --green-soft:#e6f4ea;
+    --surface:#f8f9fa; --surface-2:#f1f3f4; --sidebar:#fbfbfb;
+    --radius-s:8px; --radius-m:12px; --radius-l:16px; --radius-xl:24px;
+    --font:"Google Sans Text","Google Sans",Roboto,"Helvetica Neue",-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+    --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --topbar:64px; --sidebar-w:272px;
+    --shadow-1:0 1px 2px rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.06);
+    --shadow-2:-8px 0 24px rgba(60,64,67,.10);
   }
-</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://xingboli.github.io/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
-    initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item language-switcher-nav"> <a class="nav-link" href="/about-zh/" title="Switch language" aria-label="Switch language: 中文">中文</a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Xingbo</span> Li </h1> <p class="desc">M.S. Student at <a href="https://www.wtu.edu.cn/" rel="external nofollow noopener" target="_blank">Wuhan Textile University</a></p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/xingbo-li-480.webp 480w,/assets/img/xingbo-li-800.webp 800w,/assets/img/xingbo-li-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/xingbo-li.jpg?v=e4e66a41a72dbb41abd96b98a7129a11" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="xingbo-li.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p>Wuhan Textile University</p> <p>Wuhan, Hubei, China</p> </div> </div> <div class="clearfix"> <p>I am a master’s student (Class of 2026) at <a href="https://www.wtu.edu.cn/" rel="external nofollow noopener" target="_blank">Wuhan Textile University</a>. My research interests lie at the intersection of ubiquitous computing, wireless sensing, and smart health — for example, using mmWave radars and smartphone IMU sensors for non-invasive health monitoring, such as tremor assessment and remote monitoring for Parkinson’s disease.</p> <p>Right now I am exploring how to build practical, low-burden sensing systems that work in real daily-life settings, and I look forward to turning these interests into concrete research outcomes.</p> <h3 id="cryptographic-identity">Cryptographic Identity</h3> <p>As of 2026-09-09, I declare the following Ed25519 public key as my long-term personal cryptographic identity key.</p> <p>This key may be used to verify digital signatures and cryptographic statements produced with the corresponding private key.</p> <p><strong>Public key</strong></p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHA18HF9WL2JNY+zGFNQEhc8VPqxe38/Wg5SZTdv8VlH
-</code></pre></div></div> <p><strong>Public key fingerprint</strong></p> <p><code class="language-plaintext highlighter-rouge">SHA256:iCbdapwiIMnaXUZm7OJrsXmF4bHFIdI6L0BN43QhkVA</code></p> <p>If the key is revoked, rotated, or replaced in the future, I will publish updated key information on this page and, when conditions permit, sign the change statement with the original key.</p> </div> <div class="social"> <div class="contact-icons"> <a href="mailto:xingbo.li@hotmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/xingboli" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/feed.xml" title="Rss icon"><i class="fa-solid fa-square-rss"></i></a> </div> <div class="contact-note"></div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Xingbo Li. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
-  window.alFolio = {
-    compatBootstrap: false
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0}
+  body{
+    background:#fff; color:var(--ink); font-family:var(--font);
+    font-size:14px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue); text-decoration:none}
+  a:hover{text-decoration:underline}
+  button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+
+  /* ── 顶栏 ───────────────────────────────── */
+  .topbar{
+    position:sticky; top:0; z-index:40; height:var(--topbar);
+    display:flex; align-items:center; gap:16px;
+    padding:0 20px; background:rgba(255,255,255,.86);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-size:15px; font-weight:500; color:var(--ink); letter-spacing:.1px}
+  .brand:hover{text-decoration:none}
+  .brand img{width:26px; height:26px; border-radius:50%; object-fit:cover; object-position:center 20%; border:1px solid var(--line)}
+  .brand .sub{color:var(--ink-3); font-weight:400; font-size:12px; padding-left:2px}
+  .topnav{margin-left:auto; display:flex; align-items:center; gap:4px}
+  .topnav a{
+    display:inline-flex; align-items:center; gap:6px;
+    height:34px; padding:0 12px; border-radius:var(--radius-s);
+    color:var(--ink-2); font-size:13px;
+  }
+  .topnav a:hover{background:var(--surface-2); color:var(--ink); text-decoration:none}
+  .iconbtn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:36px; height:36px; border-radius:50%; color:var(--ink-2);
+    transition:background .15s;
+  }
+  .iconbtn:hover{background:var(--surface-2); color:var(--ink)}
+
+  /* ── 双栏骨架 ───────────────────────────── */
+  .shell{display:flex; align-items:flex-start; max-width:1320px; margin:0 auto}
+  .sidebar{
+    position:sticky; top:var(--topbar); align-self:flex-start;
+    width:var(--sidebar-w); flex:0 0 var(--sidebar-w);
+    height:calc(100vh - var(--topbar)); overflow-y:auto;
+    padding:22px 12px 28px; background:var(--sidebar);
+    border-right:1px solid var(--line);
+  }
+  .navgroup{margin-bottom:22px}
+  .navlabel{
+    font-size:11px; font-weight:500; letter-spacing:.8px; text-transform:uppercase;
+    color:var(--ink-4); padding:0 12px; margin-bottom:6px;
+  }
+  .navlink{
+    display:flex; align-items:center; gap:10px;
+    height:34px; padding:0 12px; margin-bottom:1px; border-radius:var(--radius-s);
+    color:var(--ink-2); font-size:13.5px;
+  }
+  .navlink:hover{background:var(--surface-2); color:var(--ink); text-decoration:none}
+  .navlink.active{background:var(--blue-soft); color:var(--blue); font-weight:500}
+  .navlink svg{flex:0 0 18px; opacity:.75}
+  .navlink.active svg{opacity:1}
+
+  .profilecard{
+    margin:26px 8px 0; padding:14px; border:1px solid var(--line);
+    border-radius:var(--radius-m); background:#fff;
+  }
+  .profilecard .row{display:flex; align-items:center; gap:10px}
+  .profilecard img{width:36px; height:36px; border-radius:50%; object-fit:cover; object-position:center 20%}
+  .profilecard .nm{font-size:13.5px; font-weight:500}
+  .profilecard .role{font-size:12px; color:var(--ink-3)}
+  .profilecard p{margin:10px 0 0; font-size:12px; color:var(--ink-3); line-height:1.55}
+  .profilecard .links{display:flex; gap:12px; margin-top:10px; font-size:12px}
+
+  main{flex:1 1 auto; min-width:0; padding:44px 56px 96px; max-width:1000px}
+
+  /* ── 排版 ───────────────────────────────── */
+  .eyebrow{font-size:12px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-4); font-weight:500}
+  h1{font-size:34px; line-height:1.2; font-weight:400; letter-spacing:-.4px; margin:8px 0 0}
+  .lede{margin:10px 0 0; font-size:14.5px; color:var(--ink-2)}
+  .lede .dot{color:var(--ink-4); margin:0 8px}
+  .prose{margin:22px 0 0; max-width:70ch; font-size:14.5px; line-height:1.8; color:var(--ink-2)}
+  .prose p{margin:0 0 12px}
+  .prose strong{color:var(--ink); font-weight:500}
+
+  section{scroll-margin-top:calc(var(--topbar) + 16px)}
+  .sechead{display:flex; align-items:baseline; gap:12px; margin:52px 0 6px}
+  .sechead h2{font-size:19px; font-weight:500; margin:0; letter-spacing:-.1px}
+  .sechead .en{font-size:12.5px; color:var(--ink-4); letter-spacing:.3px}
+  .sechead .count{
+    margin-left:auto; font-size:12px; color:var(--ink-3);
+    background:var(--surface-2); border-radius:20px; padding:2px 10px;
+  }
+  .hint{font-size:13px; color:var(--ink-3); margin:0 0 18px}
+
+  /* ── 工具卡片 ───────────────────────────── */
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:14px; margin-top:16px}
+  .card{
+    position:relative; display:flex; flex-direction:column; gap:13px;
+    padding:18px; border:1px solid var(--line); border-radius:var(--radius-l);
+    background:#fff; text-align:left; transition:border-color .15s, box-shadow .15s;
+  }
+  .card:hover{border-color:var(--line-2); box-shadow:var(--shadow-1); text-decoration:none}
+  .card:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+  .card .ico{
+    width:38px; height:38px; border-radius:var(--radius-m); display:flex;
+    align-items:center; justify-content:center; background:var(--surface-2); color:var(--ink-2);
+    flex:0 0 auto; transition:background .15s, color .15s;
+  }
+  .card:hover .ico{background:var(--blue-soft); color:var(--blue)}
+  .card .body{display:flex; flex-direction:column; gap:7px; flex:1; min-width:0}
+  .card .titles{display:flex; flex-direction:column; gap:1px; min-width:0}
+  .card .nm{font-size:14.5px; font-weight:500; color:var(--ink); line-height:1.45}
+  .card .en{font-size:12px; color:var(--ink-4); font-weight:400}
+  .card .ds{font-size:13px; color:var(--ink-3); line-height:1.62}
+  .card .bottom{display:flex; align-items:center; gap:8px; margin-top:auto; padding-top:4px}
+  .card .tags{display:flex; flex-wrap:wrap; gap:6px}
+  .tag{
+    font-size:11.5px; color:var(--ink-3); background:var(--surface);
+    border:1px solid var(--line); border-radius:20px; padding:1px 8px; white-space:nowrap;
+  }
+  .card .open{
+    display:inline-flex; align-items:center; gap:2px; margin-left:auto;
+    font-size:12.5px; color:var(--blue); font-weight:500; white-space:nowrap;
+  }
+  .card:hover .open{gap:5px}
+  /* 首个卡片：横版，跨两列 */
+  .card.feat{
+    grid-column:span 2;
+    display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:15px; row-gap:0;
+    padding:20px 22px;
+  }
+  .card.feat .ico{width:44px; height:44px; border-radius:13px}
+  .card.feat .body{gap:8px}
+  .card.feat .nm{font-size:15.5px}
+  .card.feat .ds{max-width:56ch}
+
+  /* ── 项目列表 ───────────────────────────── */
+  .rows{border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; margin-top:16px}
+  .row{
+    display:flex; align-items:center; gap:14px; padding:14px 16px;
+    border-bottom:1px solid var(--line); transition:background .12s;
+  }
+  .row:last-child{border-bottom:none}
+  .row:hover{background:var(--surface)}
+  .row .rowico{flex:0 0 32px; height:32px; border-radius:var(--radius-s); background:var(--surface-2); display:flex; align-items:center; justify-content:center; color:var(--ink-3)}
+  .row .body{min-width:0; flex:1}
+  .row .nm{font-size:13.5px; font-weight:500; color:var(--ink)}
+  .row .nm span{font-weight:400; color:var(--ink-4); font-size:12px; margin-left:8px}
+  .row .ds{font-size:12.5px; color:var(--ink-3); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .row .meta{display:flex; align-items:center; gap:10px; font-size:12px; color:var(--ink-4); white-space:nowrap}
+
+  /* ── 加密身份 ───────────────────────────── */
+  details.crypto{margin-top:16px; border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden}
+  details.crypto summary{
+    list-style:none; cursor:pointer; padding:14px 16px; display:flex; align-items:center; gap:10px;
+    font-size:13.5px; color:var(--ink-2); font-weight:500;
+  }
+  details.crypto summary::-webkit-details-marker{display:none}
+  details.crypto summary:hover{background:var(--surface)}
+  details.crypto summary .chev{margin-left:auto; transition:transform .2s; color:var(--ink-4)}
+  details.crypto[open] summary .chev{transform:rotate(180deg)}
+  .crypto .inner{padding:4px 16px 18px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+  .crypto .inner p{margin:12px 0}
+  .codeblock{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius-s); padding:12px 44px 12px 14px; margin:8px 0 0;
+    font-family:var(--mono); font-size:12px; color:var(--ink-2);
+    word-break:break-all; line-height:1.6;
+  }
+  .codeblock .copy{
+    position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:6px;
+    display:flex; align-items:center; justify-content:center; color:var(--ink-3);
+  }
+  .codeblock .copy:hover{background:var(--surface-2); color:var(--ink)}
+  .cryptolabel{font-size:11.5px; color:var(--ink-4); letter-spacing:.4px; text-transform:uppercase; margin-top:14px}
+
+  /* ── 页脚 ───────────────────────────────── */
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--ink-4); display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+  }
+  footer .sep{color:var(--line-2)}
+  footer a{color:var(--ink-3)}
+  footer a:hover{color:var(--blue)}
+
+  /* ── 抽屉 ───────────────────────────────── */
+  .scrim{
+    position:fixed; inset:0; background:rgba(32,33,36,.38); z-index:60;
+    opacity:0; pointer-events:none; transition:opacity .24s ease;
+  }
+  .scrim.on{opacity:1; pointer-events:auto}
+  .drawer{
+    position:fixed; top:0; right:0; z-index:70; height:100vh;
+    width:min(760px,94vw); background:#fff;
+    display:flex; flex-direction:column;
+    border-left:1px solid var(--line); box-shadow:var(--shadow-2);
+    transform:translateX(100%); transition:transform .26s cubic-bezier(.2,0,0,1);
+    will-change:transform;
+  }
+  .drawer.on{transform:translateX(0)}
+  .drawer header{
+    display:flex; align-items:center; gap:10px; padding:12px 12px 12px 20px;
+    border-bottom:1px solid var(--line); flex:0 0 auto;
+  }
+  .drawer header .ico{
+    width:28px; height:28px; border-radius:var(--radius-s); background:var(--surface-2);
+    display:flex; align-items:center; justify-content:center; color:var(--ink-2); flex:0 0 auto;
+  }
+  .drawer header .tt{font-size:14px; font-weight:500; line-height:1.3}
+  .drawer header .tt small{display:block; font-size:11.5px; color:var(--ink-4); font-weight:400}
+  .drawer header .acts{margin-left:auto; display:flex; align-items:center; gap:2px}
+  .tabs{display:flex; gap:2px; padding:0 12px; border-bottom:1px solid var(--line); flex:0 0 auto}
+  .tab{
+    position:relative; padding:11px 14px 10px; font-size:13px; color:var(--ink-2);
+    border-bottom:3px solid transparent; margin-bottom:-1px;
+  }
+  .tab:hover{color:var(--ink)}
+  .tab.on{color:var(--blue); border-bottom-color:var(--blue); font-weight:500}
+  .drawer .pane{flex:1 1 auto; min-height:0; display:none; overflow:auto}
+  .drawer .pane.on{display:block}
+  #framePane{position:relative; padding:0; overflow:hidden}
+  #framePane.on{display:block}
+  #toolFrame{width:100%; height:100%; border:0; display:block; background:#fff}
+  .loading{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; gap:12px; background:#fff; color:var(--ink-3); font-size:13px;
+    transition:opacity .3s; z-index:2;
+  }
+  .loading.hide{opacity:0; pointer-events:none}
+  .spinner{
+    width:22px; height:22px; border:2.5px solid var(--blue-soft-2); border-top-color:var(--blue);
+    border-radius:50%; animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .about{padding:26px 28px 28px; max-width:64ch}
+  .about h3{font-size:15px; font-weight:500; margin:0 0 8px}
+  .about p{font-size:13.5px; color:var(--ink-2); line-height:1.75; margin:0 0 16px}
+  .about ul{margin:0 0 18px; padding-left:18px; font-size:13.5px; color:var(--ink-2); line-height:1.8}
+  .about li{margin:4px 0}
+  .about .kv{display:flex; gap:10px; font-size:13px; color:var(--ink-3); margin:6px 0}
+  .about .kv b{color:var(--ink-2); font-weight:500; min-width:64px}
+  .drawer footer.bar{
+    flex:0 0 auto; padding:12px 20px; border-top:1px solid var(--line);
+    display:flex; align-items:center; gap:12px; background:#fff; margin:0;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    height:38px; padding:0 18px; border-radius:20px; font-size:13px; font-weight:500;
+    border:1px solid var(--line-2); color:var(--blue); background:#fff;
+    transition:background .15s, border-color .15s;
+  }
+  .btn:hover{background:var(--blue-soft); border-color:var(--blue-soft-2); text-decoration:none}
+  .btn.solid{background:var(--blue); color:#fff; border-color:var(--blue)}
+  .btn.solid:hover{background:var(--blue-hover); border-color:var(--blue-hover)}
+  .drawer footer.bar .note{font-size:11.5px; color:var(--ink-4); margin-left:auto}
+
+  /* ── 响应式 ─────────────────────────────── */
+  .onlymobile{display:none}
+  @media (max-width:860px){
+    .card.feat{grid-column:span 1; grid-template-columns:auto minmax(0,1fr); padding:18px}
+  }
+  @media (max-width:1000px){
+    .sidebar{display:none}
+    main{padding:32px 24px 72px}
+    .onlymobile{display:inline-flex}
+  }
+  @media (max-width:560px){
+    h1{font-size:27px}
+    main{padding:26px 18px 64px}
+    .drawer{width:100vw}
+    .brand .sub{display:none}
+    .topbar{gap:8px; padding:0 12px}
+    .topnav{gap:0}
+    .topnav a{font-size:12.5px; padding:0 7px; gap:4px}
+    .sechead{flex-wrap:wrap; gap:6px 10px}
+    .sechead .count{margin-left:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">
+    <img src="/assets/img/xingbo-li.jpg" alt="Xingbo Li">
+    Xingbo Li <span class="sub">工具 · 项目</span>
+  </a>
+  <nav class="topnav">
+    <a href="/publications/"><span>出版物</span></a>
+    <a href="/about-zh/"><span>中文简历</span></a>
+    <a href="/feed.xml" aria-label="RSS"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.2" cy="17.8" r="1.8"/><path d="M4 12.4a7.6 7.6 0 0 1 7.6 7.6h2.4A10 10 0 0 0 4 10v2.4zm0-5.2A12.8 12.8 0 0 1 16.8 20h2.4A15.2 15.2 0 0 0 4 4.8V7.2z"/></svg></a>
+    <a href="https://github.com/xingboli" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </nav>
+</div>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="navgroup">
+      <div class="navlabel">概览</div>
+      <a class="navlink active" href="#top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1v-9.5z"/></svg>
+        首页
+      </a>
+      <a class="navlink" href="#tools">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg>
+        工具 <span style="margin-left:auto;color:#9aa0a6;font-size:12px">5</span>
+      </a>
+      <a class="navlink" href="#projects">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h4l2 2.5h7A1.5 1.5 0 0 1 20 10v7.5A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5v-10z"/></svg>
+        项目
+      </a>
+    </div>
+    <div class="navgroup">
+      <div class="navlabel">研究</div>
+      <a class="navlink" href="#research">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        研究兴趣
+      </a>
+      <a class="navlink" href="/publications/">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 5.5A1.5 1.5 0 0 1 6.5 4H18v16H6.5A1.5 1.5 0 0 1 5 18.5v-13z"/><path d="M9 8h6M9 12h6"/></svg>
+        论文发表
+      </a>
+      <a class="navlink" href="#identity">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        加密身份
+      </a>
+    </div>
+
+    <div class="profilecard">
+      <div class="row">
+        <img src="/assets/img/xingbo-li.jpg" alt="">
+        <div>
+          <div class="nm">Xingbo Li</div>
+          <div class="role">M.S. Student · WTU</div>
+        </div>
+      </div>
+      <p>泛在计算 · 无线感知 · 智慧健康</p>
+      <div class="links">
+        <a href="mailto:xingbo.li@hotmail.com">邮箱</a>
+        <a href="https://github.com/xingboli">GitHub</a>
+        <a href="/about-zh/">关于</a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="top">
+    <div class="eyebrow">Academic Homepage</div>
+    <h1>Xingbo Li</h1>
+    <p class="lede">
+      武汉纺织大学 · 硕士研究生（2026 级）<span class="dot">·</span>Wuhan, Hubei, China
+    </p>
+
+    <div class="prose">
+      <p>我的研究兴趣在<strong>泛在计算、无线感知与智慧健康</strong>的交叉处 —— 例如用毫米波雷达与手机 IMU 做非接触式健康监测，像震颤评估、帕金森病的远程随访。</p>
+      <p>目前我在探索如何构建<strong>低负担、能在真实日常环境里跑起来</strong>的感知系统，也期待把这些兴趣落成具体的研究成果。这个页面顺便收了我平时做的一些小工具，都能直接在浏览器里用，数据不出本机。</p>
+    </div>
+
+    <section id="tools">
+      <div class="sechead">
+        <h2>工具</h2><span class="en">Tools</span>
+        <span class="count">5 个 · 点击在右侧打开</span>
+      </div>
+      <p class="hint">全部为纯前端页面，直接在抽屉里运行；需要大屏操作时可以点右上角在新标签页展开。</p>
+      <div class="cards" id="toolCards"></div>
+    </section>
+
+    <section id="projects">
+      <div class="sechead">
+        <h2>项目</h2><span class="en">Projects</span>
+        <span class="count">2 个仓库</span>
+      </div>
+      <p class="hint">没有在线演示的开源仓库，点击跳到 GitHub。</p>
+      <div class="rows" id="projectRows"></div>
+    </section>
+
+    <section id="research">
+      <div class="sechead">
+        <h2>研究兴趣</h2><span class="en">Research</span>
+      </div>
+      <div class="prose">
+        <p>I am a master's student (Class of 2026) at <a href="https://www.wtu.edu.cn/" target="_blank" rel="noopener">Wuhan Textile University</a>. My research interests lie at the intersection of ubiquitous computing, wireless sensing, and smart health — for example, using mmWave radars and smartphone IMU sensors for non-invasive health monitoring, such as tremor assessment and remote monitoring for Parkinson's disease.</p>
+        <p>Right now I am exploring how to build practical, low-burden sensing systems that work in real daily-life settings, and I look forward to turning these interests into concrete research outcomes.</p>
+        <p><a href="/publications/">→ 查看论文发表（Publications）</a></p>
+      </div>
+    </section>
+
+    <section id="identity">
+      <div class="sechead">
+        <h2>加密身份</h2><span class="en">Cryptographic Identity</span>
+      </div>
+      <details class="crypto">
+        <summary>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Ed25519 长期身份公钥（2026-09-09 声明）
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="inner">
+          <p>截至 2026-09-09，我声明以下 Ed25519 公钥为我的长期个人加密身份密钥。该密钥可用于验证由对应私钥产生的数字签名与加密声明。</p>
+          <div class="cryptolabel">Public key</div>
+          <div class="codeblock" id="pubkey">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHA18HF9WL2JNY+zGFNQEhc8VPqxe38/Wg5SZTdv8VlH<button class="copy" data-copy="pubkey" aria-label="复制公钥"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button></div>
+          <div class="cryptolabel">Public key fingerprint</div>
+          <div class="codeblock" id="fingerprint">SHA256:iCbdapwiIMnaXUZm7OJrsXmF4bHFIdI6L0BN43QhkVA<button class="copy" data-copy="fingerprint" aria-label="复制指纹"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button></div>
+          <p>若将来密钥被吊销、轮换或替换，我会在本页发布更新后的密钥信息，并在条件允许时用原密钥对该变更声明签名。</p>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <span>© 2026 Xingbo Li</span>
+      <span class="sep">|</span>
+      <a href="/publications/">出版物</a>
+      <a href="/about-zh/">中文简历</a>
+      <a href="/feed.xml">RSS</a>
+      <a href="https://github.com/xingboli">GitHub</a>
+      <span class="sep">|</span>
+      <a href="/index-classic.html">旧版首页</a>
+    </footer>
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <header>
+    <span class="ico" id="drawerIco"></span>
+    <div class="tt"><span id="drawerTitle">—</span><small id="drawerSub"></small></div>
+    <div class="acts">
+      <button class="iconbtn" id="btnExternal" title="在新标签页打开" aria-label="在新标签页打开">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5h5v5"/><path d="M19 5l-7.5 7.5"/><path d="M18 14v4a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18V7A1.5 1.5 0 0 1 5.5 5.5H10"/></svg>
+      </button>
+      <button class="iconbtn" id="btnClose" title="关闭（Esc）" aria-label="关闭">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-tab="app" role="tab" aria-selected="true">应用</button>
+    <button class="tab" data-tab="about" role="tab" aria-selected="false">说明</button>
+  </div>
+
+  <div class="pane on" id="framePane">
+    <iframe id="toolFrame" title="工具预览" referrerpolicy="no-referrer-when-downgrade" allow="clipboard-write"></iframe>
+    <div class="loading" id="loading"><div class="spinner"></div><span>正在加载应用…</span></div>
+  </div>
+
+  <div class="pane about" id="aboutPane"></div>
+
+  <footer class="bar">
+    <a class="btn solid" id="btnOpenTab" target="_blank" rel="noopener">
+      在新标签页打开
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/></svg>
+    </a>
+    <a class="btn" id="btnRepo" target="_blank" rel="noopener">查看源码</a>
+    <span class="note" id="drawerNote">纯前端 · 数据不离开本机</span>
+  </footer>
+</aside>
+
+<script>
+(function(){
+  "use strict";
+
+  const I = {
+    pdf:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 16v-4l1.5.9 1.5-.9 1.5.9V16"/></svg>',
+    qr:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="6" height="6" rx="1.2"/><rect x="14.5" y="3.5" width="6" height="6" rx="1.2"/><rect x="3.5" y="14.5" width="6" height="6" rx="1.2"/><path d="M14.5 14.5h2.5v2.5H14.5zM20.5 14.5v6h-6"/></svg>',
+    git:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="7" cy="6" r="2.2"/><circle cx="7" cy="18" r="2.2"/><circle cx="17" cy="12" r="2.2"/><path d="M7 8.2v7.6M9.2 6h3.3A2.5 2.5 0 0 1 15 8.5v1.3"/></svg>',
+    radar:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 12 4.8 18.2"/><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>',
+    pulse:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h3.5L9 6l3.2 12 2.6-6h3.7"/></svg>',
+    repo:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 5.5A1.5 1.5 0 0 1 6.5 4H18v16H6.5A1.5 1.5 0 0 1 5 18.5v-13z"/><path d="M9 4v16"/></svg>'
   };
-</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
-    addBackToTop();
-  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
-// get the ninja-keys element
-const ninja = document.querySelector('ninja-keys');
 
-// add the home and posts menu items
-ninja.data = [{
-    id: "nav-about-english",
-    title: "about / English",
-    section: "Navigation",
-    handler: () => {
-      window.location.href = "/";
-    },
-  },{id: "nav-publications",
-          title: "publications",
-          description: "publications by categories in reversed chronological order. generated by jekyll-scholar.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
-        },{id: "nav-关于-中文",
-          title: "关于 / 中文",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/about-zh/";
-          },
-        },{
-        id: 'social-email',
-        title: 'email',
-        section: 'Socials',
-        handler: () => {
-          window.open("mailto:%78%69%6E%67%62%6F.%6C%69@%68%6F%74%6D%61%69%6C.%63%6F%6D", "_blank");
-        },
-      },{
-        id: 'social-github',
-        title: 'GitHub',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://github.com/xingboli", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
-        },
-      },{
-      id: 'light-theme',
-      title: 'Change theme to light',
-      description: 'Change the theme of the site to Light',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("light");
-      },
+  const TOOLS = [
+    {
+      id:'pdf-merge-print', icon:'pdf', embed:true,
+      name:'PDF 合并打印助手', en:'Merge for duplex printing',
+      desc:'批量合并 PDF，奇数页的文档自动补一页空白，让每份都从纸张正面开始 —— 手动双面打印完整叠切开就能装订。',
+      tags:['PDF','打印装订','纯本地'],
+      demo:'https://xingboli.github.io/pdf-merge-print/',
+      repo:'https://github.com/xingboli/pdf-merge-print',
+      points:['支持多选文件、递归选择文件夹、拖拽整目录','逐份标注「偶数页 ✓ / 奇数页 +1 空白」，实时算用纸张数','可选插入带文件名的分隔页，方便打印后分拣','实测 5500 页 / 1 GB 扫描件可处理，单次建议 500 MB 以内'],
+      note:'纯前端 · 文件不离开本机'
     },
     {
-      id: 'dark-theme',
-      title: 'Change theme to dark',
-      description: 'Change the theme of the site to Dark',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("dark");
-      },
+      id:'recovery-key-qr', icon:'qr',
+      name:'恢复密钥二维码', en:'Recovery key QR',
+      desc:'把恢复密钥分组编码成可打印的二维码，离线生成、不上传，适合打印后放进保险柜。',
+      tags:['安全','离线','可打印'],
+      demo:'https://xingboli.github.io/recovery-key-qr/',
+      repo:'https://github.com/xingboli/recovery-key-qr',
+      points:['密钥只在浏览器里参与编码','生成结果可直接排版打印','适合 2FA 恢复码、种子短语的纸质备份'],
+      note:'纯前端 · 密钥不离开本机'
     },
     {
-      id: 'system-theme',
-      title: 'Use system default theme',
-      description: 'Change the theme of the site to System Default',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("system");
-      },
-    },];
+      id:'git-gui-learning-lab', icon:'git',
+      name:'Git 学习打卡板', en:'Git GUI learning lab',
+      desc:'用 VS Code 的图形界面练习完整 Git / GitHub 工作流的零依赖小项目，边做边看每一步发生了什么。',
+      tags:['Git','教学','零依赖'],
+      demo:'https://xingboli.github.io/git-gui-learning-lab/',
+      repo:'https://github.com/xingboli/git-gui-learning-lab',
+      points:['不依赖命令行，全程图形界面','把分支、冲突、PR 拆成可点开的关卡','适合第一次接触 Git 的同学'],
+      note:'在线演示'
+    },
+    {
+      id:'mmWave-Studio-Parameter-Lab', icon:'radar',
+      name:'mmWave Studio Parameter Lab', en:'FMCW radar lab',
+      desc:'面向 AWR1843BOOST 与 DCA1000 的开源 FMCW 雷达参数实验台：物理量估算、参数校验与 Studio Lua 模板。',
+      tags:['FMCW','雷达','TypeScript'],
+      demo:'https://xingboli.github.io/mmWave-Studio-Parameter-Lab/',
+      repo:'https://github.com/xingboli/mmWave-Studio-Parameter-Lab',
+      points:['按 chirp / frame 参数推算距离、速度、角度分辨率','参数组合的合法性校验与冲突提示','一键导出 mmWave Studio 可用的 Lua 配置'],
+      note:'在线演示 · 需较大屏幕'
+    },
+    {
+      id:'FineFatigue', icon:'pulse',
+      name:'FineFatigue', en:'Fine motor assessment',
+      desc:'多模态手部疲劳与精细动作评估系统的交互演示：结合摄像头与传感器信号，做疲劳状态的实时判读。',
+      tags:['多模态','健康感知','Demo'],
+      demo:'https://xingboli.github.io/FineFatigue/',
+      repo:'https://github.com/xingboli/FineFatigue',
+      points:['浏览器内采集与可视化，不需要装客户端','演示用的交互流程与判读界面','属于研究原型，非医疗诊断工具'],
+      note:'研究原型 · 需摄像头权限'
+    }
+  ];
 
-</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
+  const PROJECTS = [
+    {name:'zotero-arxiv-daily', full:'xingboli / zotero-arxiv-daily', desc:'根据你的 Zotero 文库每天推荐相关 arXiv 新论文', meta:'Python',
+     url:'https://github.com/xingboli/zotero-arxiv-daily'},
+    {name:'ResearchOps', full:'xingboli / ResearchOps', desc:'Stable Kernel v0.1 for ResearchOps：科研流程的操作层实验', meta:'Python',
+     url:'https://github.com/xingboli/ResearchOps'}
+  ];
+
+  const $ = s => document.querySelector(s);
+  const cardsEl = $('#toolCards'), rowsEl = $('#projectRows');
+  const drawer = $('#drawer'), scrim = $('#scrim'), frame = $('#toolFrame'), loading = $('#loading');
+
+  /* 渲染卡片 */
+  cardsEl.innerHTML = TOOLS.map((t, i) => `
+    <button class="card${i === 0 ? ' feat' : ''}" data-tool="${t.id}" aria-label="在右侧打开 ${t.name}">
+      <span class="ico">${I[t.icon]}</span>
+      <span class="body">
+        <span class="titles">
+          <span class="nm">${t.name}</span>
+          <span class="en">${t.en}</span>
+        </span>
+        <span class="ds">${t.desc}</span>
+        <span class="bottom">
+          <span class="tags">${t.tags.map(x=>`<span class="tag">${x}</span>`).join('')}</span>
+          <span class="open">打开
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6 6 6-6 6"/></svg>
+          </span>
+        </span>
+      </span>
+    </button>`).join('');
+
+  rowsEl.innerHTML = PROJECTS.map(p => `
+    <a class="row" href="${p.url}" target="_blank" rel="noopener">
+      <span class="rowico">${I.repo}</span>
+      <span class="body">
+        <span class="nm">${p.name}<span>${p.full}</span></span>
+        <span class="ds">${p.desc}</span>
+      </span>
+      <span class="meta">${p.meta}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </span>
+    </a>`).join('');
+
+  /* 抽屉 */
+  let current = null, lastFocus = null;
+
+  function setTab(name){
+    document.querySelectorAll('.tab').forEach(b=>{
+      const on = b.dataset.tab === name;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', on ? 'true':'false');
+    });
+    $('#framePane').style.display = name === 'app' ? 'block' : 'none';
+    $('#aboutPane').classList.toggle('on', name === 'about');
+  }
+
+  function open(id, push){
+    const t = TOOLS.find(x => x.id === id);
+    if (!t) return;
+    current = t;
+    lastFocus = document.activeElement;
+    $('#drawerTitle').textContent = t.name;
+    $('#drawerSub').textContent = t.en;
+    $('#drawerIco').innerHTML = I[t.icon];
+    $('#drawerNote').textContent = t.note || '';
+    $('#aboutPane').innerHTML = `
+      <h3>${t.name}</h3>
+      <p>${t.desc}</p>
+      <ul>${t.points.map(p=>`<li>${p}</li>`).join('')}</ul>
+      <div class="kv"><b>标签</b><span>${t.tags.join(' · ')}</span></div>
+      <div class="kv"><b>演示</b><a href="${t.demo}" target="_blank" rel="noopener">${t.demo}</a></div>
+      <div class="kv"><b>源码</b><a href="${t.repo}" target="_blank" rel="noopener">${t.repo.replace('https://','')}</a></div>`;
+
+    $('#btnOpenTab').href = t.demo;
+    $('#btnRepo').href = t.repo;
+    $('#btnExternal').onclick = () => window.open(t.demo, '_blank', 'noopener');
+
+    // 载入 iframe（首次打开或切换应用时）
+    const frameUrl = t.embed ? t.demo + '?embed=1' : t.demo;
+    loading.classList.remove('hide');
+    if (frame.dataset.src !== frameUrl){
+      frame.dataset.src = frameUrl;
+      frame.src = frameUrl;
+    } else {
+      loading.classList.add('hide');
+    }
+    setTab('app');
+
+    drawer.classList.add('on');
+    scrim.classList.add('on');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    if (push !== false) history.replaceState(null, '', '#' + t.id);
+  }
+
+  function close(){
+    drawer.classList.remove('on');
+    scrim.classList.remove('on');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    current = null;
+    history.replaceState(null, '', location.pathname + location.search);
+    // 释放 iframe，避免工具页面常驻内存
+    setTimeout(()=>{ if (!drawer.classList.contains('on')){ frame.src = 'about:blank'; frame.dataset.src = ''; } }, 300);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  frame.addEventListener('load', ()=>{
+    if (frame.src && frame.src !== 'about:blank') loading.classList.add('hide');
+  });
+
+  cardsEl.addEventListener('click', e=>{
+    const card = e.target.closest('.card');
+    if (card) open(card.dataset.tool);
+  });
+  $('#btnClose').onclick = close;
+  scrim.onclick = close;
+  document.addEventListener('keydown', e=>{
+    if (e.key === 'Escape' && drawer.classList.contains('on')) close();
+  });
+  document.querySelectorAll('.tab').forEach(b=>{
+    b.onclick = ()=>{
+      const u = current ? (current.embed ? current.demo + '?embed=1' : current.demo) : '';
+      if (b.dataset.tab === 'app' && current && frame.dataset.src !== u){
+        frame.src = u; frame.dataset.src = u;
+      }
+      setTab(b.dataset.tab);
+    };
+  });
+
+  // 复制
+  document.querySelectorAll('.copy').forEach(b=>{
+    b.onclick = async ()=>{
+      const el = document.getElementById(b.dataset.copy);
+      const text = el.childNodes[0].nodeValue.trim();
+      try{ await navigator.clipboard.writeText(text); b.style.color = 'var(--green)'; setTimeout(()=>b.style.color='',1200); }
+      catch(e){ }
+    };
+  });
+
+  // 侧边栏高亮
+  const links = Array.from(document.querySelectorAll('.navlink[href^="#"]'));
+  const sections = links.map(a => { const el = document.querySelector(a.getAttribute('href')); return el ? {a, el} : null; }).filter(Boolean);
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if (!en.isIntersecting) return;
+      const s = sections.find(x => x.el === en.target);
+      if (!s) return;
+      links.forEach(l=>l.classList.remove('active'));
+      s.a.classList.add('active');
+    });
+  }, {rootMargin:'-72px 0px -70% 0px', threshold:0});
+  sections.forEach(s=>io.observe(s.el));
+
+  // 深链：#tool-id 或 #id
+  function handleHash(){
+    const hash = decodeURIComponent(location.hash.replace('#',''));
+    if (!hash) return;
+    if (TOOLS.some(t=>t.id === hash)){
+      if (!current || current.id !== hash) open(hash, false);
+    } else {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView();
+    }
+  }
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
+
+  // 抽屉打开后把焦点交给面板，键盘用户可直接 Esc 关闭
+  drawer.setAttribute('tabindex','-1');
+  const _open = open;
+  open = function(id, push){
+    _open(id, push);
+    try { drawer.focus({preventScroll:true}); } catch(e){}
+  };
+  window.__openDrawer = open;
+})();
+</script>
+</body>
+</html>
